@@ -5,6 +5,7 @@ import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import useForm from "../../hooks/useForm";
 import useStateToLocalStorage from "../../hooks/useStateToLocalStorage";
 import styles from "./JoinRoom.module.css";
+import {SOCKET_HOST} from "../../constant";
 
 const JoinRoom = ({header, inputs}) => {
   const history = useHistory();
@@ -25,7 +26,7 @@ const JoinRoom = ({header, inputs}) => {
     e.preventDefault();
     try {
       if(values.number) {
-        fetch('/api/sms/', {
+        fetch(SOCKET_HOST + '/api/sms/', {
           method: 'POST',
           headers: {
             'Accept': 'application/json, text/plain, */*',
