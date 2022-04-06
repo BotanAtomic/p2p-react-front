@@ -1,0 +1,102 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-top: 2px solid #212121;
+  background-color: white;
+}
+.input__container {
+  flex: 0.75;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+.input__container label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.controls__container {
+  display: flex;
+  justify-content: space-around;
+  flex: 0.25;
+}
+.emoji__container {
+  position: relative;
+  margin-right: 5px;
+}
+.emoji__button {
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.emoji__button:hover, .emoji__button:focus {
+  transform: scale(1.1);
+}
+.emoji__mart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-95%, -105%);
+}
+.send__button {
+  color: #28965A;
+  cursor: pointer;
+  font-size: 18px;
+}
+.send__button--active {
+  animation: sent 0.8s;
+}
+.send__button:hover {
+  color: #00E676;
+}
+.send__button:focus {
+  color: #00E676;
+}
+@media(max-width: 400px) {
+  .emoji__mart {
+    transform: translate(-77%, -105%);
+  }
+}
+@keyframes sent {
+  0% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(0.75, 0.85);
+  }
+  30% {
+    transform: scale(1.2, 1.2);
+  }
+  50% {
+    transform: scale(0.95,0.95);
+  }
+  70% {
+    transform: scale(1.03,1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*** 
+  EMOJI MART CUSTOM CSS 
+***/
+
+:global(.emoji-mart) {
+  width: 300px !important;
+}
+:global(.emoji-mart-title-label) {
+  font-size: 16px !important;
+}
+:global(.emoji-mart-emoji) {
+  cursor: pointer !important;
+}
+:global(.emoji-mart-emoji) > span {
+  cursor: pointer !important;
+}
