@@ -91,7 +91,9 @@ const SocketContextProvider = ({children}) => {
           });
       }
       else {
-        navigator.mediaDevices.getUserMedia({video: {width: {min: 640}, height: {min: 480}}})
+        navigator.mediaDevices.getUserMedia({video: {width: {min: 640}, height: {min: 480}, facingMode: {
+              exact: 'environment'
+            }}})
         .then(currentStream => {
           replaceVideoStream(stream, currentStream, peer);
         })
