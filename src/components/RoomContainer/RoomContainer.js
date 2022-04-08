@@ -14,6 +14,7 @@ const RoomContainer = () => {
   const {
     isHost,
     setParams,
+    displayName,
     setDisplayName,
     roomName: hostRoomName,
     setRoomName: setHostRoomName,
@@ -92,7 +93,7 @@ const RoomContainer = () => {
         hasPeerError={hasPeerError}
         hasSocketError={hasSocketError}
       />
-      <MapContainer style={{width: 400, height: 400 }} center={[48.856614, 2.3522219]} zoom={7}>
+      {displayName && <MapContainer style={{width: 400, height: 400 }} center={[48.856614, 2.3522219]} zoom={7}>
         <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -101,7 +102,7 @@ const RoomContainer = () => {
             <LocationMarker key={key} name={key} position={[value.latitude, value.longitude]}/>
         ))}
 
-      </MapContainer>
+      </MapContainer>}
       <ChatContainer />
     </div>
   );
