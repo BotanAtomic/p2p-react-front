@@ -100,7 +100,7 @@ const RoomContainer = () => {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {positions && Object.keys(positions).length && Object.entries(positions).map(([key, value]) => (
-            <LocationMarker key={key} name={key} position={[value.latitude, value.longitude]}/>
+            <LocationMarker key={key} name={key || "Victime"} position={[value.latitude, value.longitude]}/>
         ))}
 
       </MapContainer>}

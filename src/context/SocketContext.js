@@ -91,9 +91,7 @@ const SocketContextProvider = ({children}) => {
           });
       }
       else {
-        navigator.mediaDevices.getUserMedia({video: {width: {min: 640}, height: {min: 480}, facingMode: {
-              exact: 'environment'
-            }}})
+        navigator.mediaDevices.getUserMedia({video: {width: {min: 640}, height: {min: 480}, facingMode: 'environment'}})
         .then(currentStream => {
           replaceVideoStream(stream, currentStream, peer);
         })
@@ -167,7 +165,7 @@ const SocketContextProvider = ({children}) => {
     };
 
     const getStream = () => {
-      navigator.mediaDevices.getUserMedia({video: {width: {min: 640}, height: {min: 480}}, audio: true})
+      navigator.mediaDevices.getUserMedia({video: {width: {min: 640}, height: {min: 480}, facingMode: 'environment'}, audio: true})
         .then(currentStream => {
           // SET UP LISTENERS
           setUserConnection(currentStream, true);
