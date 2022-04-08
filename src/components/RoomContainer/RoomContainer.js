@@ -93,7 +93,8 @@ const RoomContainer = () => {
         hasPeerError={hasPeerError}
         hasSocketError={hasSocketError}
       />
-      {displayName && <MapContainer style={{width: 400, height: 400 }} center={[48.856614, 2.3522219]} zoom={7}>
+      {displayName && window.innerWidth > 500 &&
+          <MapContainer style={{width: 400, height: 400 }} center={[48.856614, 2.3522219]} zoom={7}>
         <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
